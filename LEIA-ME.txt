@@ -1,0 +1,20 @@
+RIO DE JANEIRO EM MOVIMENTO
+Plataforma 3D — protótipo navegável
+
+COMO ABRIR
+1. Mantenha todos os arquivos e a pasta assets juntos.
+2. Abra o arquivo index.html em um navegador moderno.
+3. Use as abas superiores para navegar por Visão geral, Vivências, Memórias, Saberes, Roteiro e Galeria.
+
+CONTEÚDO
+- O texto foi estruturado a partir da proposta PINCEL 2026 do projeto.
+- As fotografias desta versão são ilustrativas e foram criadas para o protótipo.
+- Registros reais, vídeos e Diários de Vivências Culturais poderão substituir ou ampliar a galeria depois da viagem, mediante autorização de uso de imagem.
+- O protótipo não publica dados pessoais, orçamentos, datas não confirmadas ou um link de inscrição inexistente.
+
+ARQUIVOS PRINCIPAIS
+- index.html — estrutura da plataforma
+- styles.css — visual, efeitos 3D e responsividade
+- app.js — abas, roteiro, galeria e acessibilidade
+- assets — fotografias responsivas em WebP
+

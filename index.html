@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#071b2b" />
+    <meta
+      name="description"
+      content="Protótipo 3D da plataforma Rio de Janeiro em Movimento — vivências culturais, memórias e saberes."
+    />
+    <title>Rio de Janeiro em Movimento — Plataforma 3D</title>
+    <link rel="preload" as="image" href="assets/hero-1600.webp" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+    <div class="grid-floor" aria-hidden="true"></div>
+
+    <main class="app-shell" id="conteudo">
+      <header class="app-header">
+        <a class="brand" href="#inicio" data-goto="inicio" aria-label="Ir para a visão geral">
+          <span class="brand__mark" aria-hidden="true"><span>R</span><span>M</span></span>
+          <span class="brand__copy">
+            <strong>Rio em Movimento</strong>
+            <small>PINCEL 2026 · IFB Campus Planaltina</small>
+          </span>
+        </a>
+
+        <div class="header-tools">
+          <span class="prototype-pill"><i aria-hidden="true"></i> Protótipo 3D</span>
+          <button class="motion-toggle" type="button" aria-label="Reduzir movimento" aria-pressed="false">
+            <span class="motion-toggle__icon" aria-hidden="true">◎</span>
+            <span class="motion-toggle__label">Reduzir movimento</span>
+          </button>
+        </div>
+      </header>
+
+      <nav class="tab-viewport" aria-label="Seções da plataforma">
+        <div class="tab-rail" role="tablist" aria-label="Explore a plataforma">
+          <button
+            class="tab-button is-active"
+            id="tab-inicio"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-inicio"
+            tabindex="0"
+            data-tab="inicio"
+          >
+            <span class="tab-button__number">01</span>
+            <span class="tab-button__label">Visão geral</span>
+          </button>
+          <button
+            class="tab-button"
+            id="tab-vivencias"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-vivencias"
+            tabindex="-1"
+            data-tab="vivencias"
+          >
+            <span class="tab-button__number">02</span>
+            <span class="tab-button__label">Vivências</span>
+          </button>
+          <button
+            class="tab-button"
+            id="tab-memorias"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-memorias"
+            tabindex="-1"
+            data-tab="memorias"
+          >
+            <span class="tab-button__number">03</span>
+            <span class="tab-button__label">Memórias</span>
+          </button>
+          <button
+            class="tab-button"
+            id="tab-saberes"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-saberes"
+            tabindex="-1"
+            data-tab="saberes"
+          >
+            <span class="tab-button__number">04</span>
+            <span class="tab-button__label">Saberes</span>
+          </button>
+          <button
+            class="tab-button"
+            id="tab-roteiro"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-roteiro"
+            tabindex="-1"
+            data-tab="roteiro"
+          >
+            <span class="tab-button__number">05</span>
+            <span class="tab-button__label">Roteiro</span>
+          </button>
+          <button
+            class="tab-button"
+            id="tab-galeria"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-galeria"
+            tabindex="-1"
+            data-tab="galeria"
+          >
+            <span class="tab-button__number">06</span>
+            <span class="tab-button__label">Galeria</span>
+          </button>
+        </div>
+      </nav>
+
+      <section class="stage" aria-live="polite">
+        <article
+          class="platform-panel platform-panel--hero is-active"
+          id="panel-inicio"
+          role="tabpanel"
+          aria-labelledby="tab-inicio"
+          data-panel="inicio"
+        >
+          <div class="hero-copy">
+            <p class="eyebrow"><span></span> Cultura · território · memória</p>
+            <h1>Rio de Janeiro<br /><em>em movimento</em></h1>
+            <p class="hero-lead">
+              Uma imersão cultural de cinco dias que conecta estudantes, patrimônios e novas
+              formas de ler a cidade.
+            </p>
+            <div class="action-row">
+              <button class="button button--primary" type="button" data-goto="roteiro">
+                Explorar o roteiro <span aria-hidden="true">↗</span>
+              </button>
+              <button class="button button--ghost" type="button" data-goto="galeria">
+                Ver galeria <span aria-hidden="true">→</span>
+              </button>
+            </div>
+
+            <dl class="metric-row" aria-label="Resumo do projeto">
+              <div><dt>5</dt><dd>estudantes</dd></div>
+              <div><dt>5</dt><dd>dias de imersão</dd></div>
+              <div><dt>3</dt><dd>cursos conectados</dd></div>
+            </dl>
+          </div>
+
+          <div class="hero-scene" data-tilt data-tilt-strength="0.45">
+            <div class="photo-plane photo-plane--back" aria-hidden="true"></div>
+            <figure class="photo-plane photo-plane--main">
+              <picture>
+                <source
+                  srcset="assets/hero-960.webp 960w, assets/hero-1600.webp 1600w"
+                  sizes="(max-width: 860px) 92vw, 48vw"
+                  type="image/webp"
+                />
+                <img
+                  src="assets/hero-1600.webp"
+                  width="1600"
+                  height="900"
+                  alt="Cena ilustrativa de estudantes e educadores explorando um território cultural urbano do Rio"
+                />
+              </picture>
+              <figcaption>
+                <span>01</span>
+                <p><strong>Uma cidade como sala de aula</strong> Imagem ilustrativa do protótipo</p>
+              </figcaption>
+            </figure>
+            <div class="floating-tag floating-tag--top" aria-hidden="true">PATRIMÔNIO</div>
+            <div class="floating-tag floating-tag--bottom" aria-hidden="true">PERTENCIMENTO</div>
+            <div class="orbit orbit--one" aria-hidden="true"></div>
+            <div class="orbit orbit--two" aria-hidden="true"></div>
+          </div>
+        </article>
+
+        <article
+          class="platform-panel platform-panel--story theme-coral"
+          id="panel-vivencias"
+          role="tabpanel"
+          aria-labelledby="tab-vivencias"
+          data-panel="vivencias"
+          hidden
+        >
+          <div class="story-photo" data-tilt>
+            <picture>
+              <source
+                srcset="assets/vivencias-960.webp 960w, assets/vivencias-1600.webp 1600w"
+                sizes="(max-width: 860px) 92vw, 56vw"
+                type="image/webp"
+              />
+              <img
+                src="assets/vivencias-1600.webp"
+                width="1600"
+                height="900"
+                alt="Cena ilustrativa de cinco estudantes observando mosaicos e registrando uma vivência cultural"
+              />
+            </picture>
+            <div class="story-photo__index" aria-hidden="true">02</div>
+            <p class="image-note">Imagem ilustrativa · registros reais serão incluídos após a viagem</p>
+          </div>
+
+          <div class="story-content">
+            <p class="eyebrow"><span></span> Presença e descoberta</p>
+            <h2>Vivências que<br /><em>atravessam a cidade</em></h2>
+            <p class="story-lead">
+              Observar, conviver e registrar. Cada parada transforma o percurso em experiência
+              compartilhada e amplia o acesso à cultura e ao lazer educativo.
+            </p>
+            <ul class="layer-list">
+              <li><span>01</span><p><strong>Explorar</strong> história, arquitetura e manifestações artísticas.</p></li>
+              <li><span>02</span><p><strong>Registrar</strong> fotografias, vídeos e diários de vivências.</p></li>
+              <li><span>03</span><p><strong>Compartilhar</strong> olhares entre estudantes de cursos diferentes.</p></li>
+            </ul>
+            <button class="text-link" type="button" data-goto="roteiro">
+              Conhecer as paradas <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="platform-panel platform-panel--story platform-panel--reverse theme-sand"
+          id="panel-memorias"
+          role="tabpanel"
+          aria-labelledby="tab-memorias"
+          data-panel="memorias"
+          hidden
+        >
+          <div class="story-photo" data-tilt>
+            <picture>
+              <source
+                srcset="assets/memorias-960.webp 960w, assets/memorias-1600.webp 1600w"
+                sizes="(max-width: 860px) 92vw, 56vw"
+                type="image/webp"
+              />
+              <img
+                src="assets/memorias-1600.webp"
+                width="1600"
+                height="900"
+                alt="Cena ilustrativa de estudantes observando fotografias históricas em um centro cultural"
+              />
+            </picture>
+            <div class="story-photo__index" aria-hidden="true">03</div>
+            <p class="image-note">Imagem ilustrativa · conteúdo documental em preparação</p>
+          </div>
+
+          <div class="story-content">
+            <p class="eyebrow"><span></span> Patrimônio e identidade</p>
+            <h2>Memórias que dão<br /><em>profundidade ao presente</em></h2>
+            <p class="story-lead">
+              Praça Mauá, MAR e CCBB formam uma camada de histórias, imagens e disputas de
+              memória que convida à leitura crítica do território.
+            </p>
+            <div class="quote-card" data-tilt data-tilt-strength="0.22">
+              <span aria-hidden="true">“</span>
+              <p>
+                Reconhecer patrimônio, tradições populares e diversidade como partes vivas da
+                formação cultural.
+              </p>
+              <small>Objetivo do projeto</small>
+            </div>
+            <button class="text-link" type="button" data-goto="galeria">
+              Abrir a janela da cidade <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="platform-panel platform-panel--story theme-cyan"
+          id="panel-saberes"
+          role="tabpanel"
+          aria-labelledby="tab-saberes"
+          data-panel="saberes"
+          hidden
+        >
+          <div class="story-photo" data-tilt>
+            <picture>
+              <source
+                srcset="assets/saberes-960.webp 960w, assets/saberes-1600.webp 1600w"
+                sizes="(max-width: 860px) 92vw, 56vw"
+                type="image/webp"
+              />
+              <img
+                src="assets/saberes-1600.webp"
+                width="1600"
+                height="900"
+                alt="Cena ilustrativa de estudantes interagindo com uma exposição sobre ciência, ambiente e futuro"
+              />
+            </picture>
+            <div class="story-photo__index" aria-hidden="true">04</div>
+            <p class="image-note">Imagem ilustrativa · sem representação de participantes reais</p>
+          </div>
+
+          <div class="story-content">
+            <p class="eyebrow"><span></span> Troca e reflexão</p>
+            <h2>Saberes em diálogo<br /><em>com novos futuros</em></h2>
+            <p class="story-lead">
+              Biologia, Agronomia e Agroecologia se encontram em uma jornada que relaciona
+              ciência, cultura, sustentabilidade e direitos humanos.
+            </p>
+            <div class="course-cloud" aria-label="Cursos participantes">
+              <span>Biologia</span><span>Agronomia</span><span>Agroecologia</span>
+            </div>
+            <div class="mini-process">
+              <div><b>01</b><span>Pesquisar</span></div>
+              <i aria-hidden="true">→</i>
+              <div><b>02</b><span>Vivenciar</span></div>
+              <i aria-hidden="true">→</i>
+              <div><b>03</b><span>Socializar</span></div>
+            </div>
+            <button class="text-link" type="button" data-goto="galeria">
+              Ver os diários em preparação <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+
+        <article
+          class="platform-panel platform-panel--route"
+          id="panel-roteiro"
+          role="tabpanel"
+          aria-labelledby="tab-roteiro"
+          data-panel="roteiro"
+          hidden
+        >
+          <div class="route-heading">
+            <p class="eyebrow"><span></span> Cinco dias de imersão</p>
+            <h2>Roteiro <em>em movimento</em></h2>
+            <p>Selecione uma parada para descobrir o foco da experiência.</p>
+          </div>
+
+          <div class="route-layout">
+            <div class="route-scene" aria-label="Paradas do roteiro cultural">
+              <div class="route-line" aria-hidden="true"></div>
+              <button class="route-node is-active" type="button" data-stop="ifb" style="--x: 7%; --y: 69%; --z: 0px">
+                <span>01</span><b>IFB Planaltina</b>
+              </button>
+              <button class="route-node" type="button" data-stop="maua" style="--x: 24%; --y: 47%; --z: 24px">
+                <span>02</span><b>Praça Mauá</b>
+              </button>
+              <button class="route-node" type="button" data-stop="amanha" style="--x: 42%; --y: 30%; --z: 50px">
+                <span>03</span><b>Museu do Amanhã</b>
+              </button>
+              <button class="route-node" type="button" data-stop="mar" style="--x: 59%; --y: 50%; --z: 32px">
+                <span>04</span><b>MAR</b>
+              </button>
+              <button class="route-node" type="button" data-stop="ccbb" style="--x: 75%; --y: 33%; --z: 56px">
+                <span>05</span><b>CCBB</b>
+              </button>
+              <button class="route-node" type="button" data-stop="selaron" style="--x: 91%; --y: 59%; --z: 16px">
+                <span>06</span><b>Escadaria Selarón</b>
+              </button>
+              <div class="route-horizon" aria-hidden="true"><span></span><span></span><span></span></div>
+            </div>
+
+            <aside class="route-card" aria-live="polite" data-tilt data-tilt-strength="0.18">
+              <span class="route-card__number">01</span>
+              <p class="route-card__type">Ponto de partida e retorno</p>
+              <h3 class="route-card__title">IFB Campus Planaltina</h3>
+              <p class="route-card__copy">
+                Planejamento, preparação, orientações, organização dos registros e avaliação final.
+              </p>
+              <div class="route-card__focus"><span>Foco</span><b>Preparar · registrar · avaliar</b></div>
+            </aside>
+          </div>
+
+          <div class="route-legend">
+            <span><i class="dot dot--coral"></i> Cultura</span>
+            <span><i class="dot dot--cyan"></i> Território</span>
+            <span><i class="dot dot--gold"></i> Memória</span>
+            <small>Datas exatas a confirmar</small>
+          </div>
+        </article>
+
+        <article
+          class="platform-panel platform-panel--gallery"
+          id="panel-galeria"
+          role="tabpanel"
+          aria-labelledby="tab-galeria"
+          data-panel="galeria"
+          hidden
+        >
+          <div class="gallery-heading">
+            <p class="eyebrow"><span></span> Janela da cidade</p>
+            <h2>Galeria <em>em camadas</em></h2>
+            <p>Um espaço preparado para fotografias, vídeos, relatos e Diários de Vivências Culturais.</p>
+          </div>
+
+          <div class="gallery-layout">
+            <div class="photo-deck" aria-label="Galeria de imagens ilustrativas">
+              <button class="deck-card deck-card--one" type="button" data-gallery="0" aria-label="Ampliar: Cidade como sala de aula">
+                <img src="assets/hero-960.webp" width="960" height="540" alt="" />
+                <span><b>01</b> Cidade como sala de aula</span>
+              </button>
+              <button class="deck-card deck-card--two" type="button" data-gallery="1" aria-label="Ampliar: Registros da experiência">
+                <img src="assets/vivencias-960.webp" width="960" height="540" alt="" loading="lazy" />
+                <span><b>02</b> Registros da experiência</span>
+              </button>
+              <button class="deck-card deck-card--three" type="button" data-gallery="2" aria-label="Ampliar: Patrimônio e identidade">
+                <img src="assets/memorias-960.webp" width="960" height="540" alt="" loading="lazy" />
+                <span><b>03</b> Patrimônio e identidade</span>
+              </button>
+              <button class="deck-card deck-card--four" type="button" data-gallery="3" aria-label="Ampliar: Saberes para o futuro">
+                <img src="assets/saberes-960.webp" width="960" height="540" alt="" loading="lazy" />
+                <span><b>04</b> Saberes para o futuro</span>
+              </button>
+            </div>
+
+            <div class="diary-column">
+              <div class="diary-card">
+                <span class="diary-card__tag">EM BREVE</span>
+                <p>Diário coletivo</p>
+                <h3>O que a cidade nos ensinou?</h3>
+                <small>Espaço reservado para relatos produzidos durante a imersão.</small>
+              </div>
+              <div class="diary-card diary-card--outline">
+                <span class="diary-card__tag">EM BREVE</span>
+                <p>Memória audiovisual</p>
+                <h3>Retratos do percurso</h3>
+                <small>Fotos e vídeos reais serão publicados com as autorizações necessárias.</small>
+              </div>
+              <p class="gallery-disclaimer">
+                As imagens desta versão são ilustrativas e não retratam participantes reais do projeto.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <footer class="status-bar">
+        <span><i></i> Plataforma conceitual</span>
+        <p>Rio de Janeiro · Cultura, Território e Memória</p>
+        <button type="button" data-goto="inicio">Voltar ao início <span aria-hidden="true">↑</span></button>
+      </footer>
+    </main>
+
+    <dialog class="lightbox" aria-labelledby="lightbox-title">
+      <div class="lightbox__surface">
+        <button class="lightbox__close" type="button" aria-label="Fechar imagem">×</button>
+        <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Imagem anterior">←</button>
+        <figure>
+          <img src="assets/hero-1600.webp" alt="" width="1600" height="900" />
+          <figcaption>
+            <span class="lightbox__index">01 / 04</span>
+            <div>
+              <h2 id="lightbox-title">Cidade como sala de aula</h2>
+              <p>Imagem ilustrativa criada para o protótipo da plataforma.</p>
+            </div>
+          </figcaption>
+        </figure>
+        <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Próxima imagem">→</button>
+      </div>
+    </dialog>
+
+    <noscript>
+      <div class="noscript-note">
+        Ative o JavaScript para navegar pelas abas 3D. Todo o conteúdo principal permanece disponível
+        na ordem da página.
+      </div>
+    </noscript>
+  </body>
+</html>
